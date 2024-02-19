@@ -109,6 +109,14 @@ void Game::ProcessInput()
 	{
 		mPaddleDir += 1;
 	};
+
+	if (
+		(!state[SDL_SCANCODE_UP] && !state[SDL_SCANCODE_DOWN]) ||
+		(state[SDL_SCANCODE_UP] && state[SDL_SCANCODE_DOWN])
+		)
+	{
+		mPaddleDir = 0;
+	}
 };
 
 void Game::UpdateGame()
